@@ -1,7 +1,8 @@
-# ■設定				：index.php  
-# ■リストのテンプレート：list.php  
-# ■詳細のテンプレート：details.php  
-# ■その他                        ：csv.php  
+# ▼ファイル
+## ■設定				：index.php  
+## ■リストのテンプレート：list.php  
+## ■詳細のテンプレート：details.php  
+## ■その他                        ：csv.php  
   
 ## ▼基本の埋め込み  
 `<?= $data["★項目名★"]; ?>`  
