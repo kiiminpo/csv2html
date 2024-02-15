@@ -22,7 +22,7 @@
 `<?php echo` → `<?=`  
   
 ## ▼詳細リンク/ID  
-`<a href="./?c=<?= $data[$dbId] ?>"`  
+`<a href="./?c=<?= $data[$dbId] ?>">`  
   
 ## ▼リスト  
 `<?php for ($i = $pos; $i < $pos + $items && $i < count($csv); ++$i): $data = $csv[$i]; if ($data): ?>`  
