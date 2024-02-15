@@ -12,7 +12,7 @@ $change = 'change.txt';
 $datename = '';
 $weekdayname = '曜日';
 $expired = '';//期限切れ年月日
-$relationdb = '';//連携ファイル
+$relationdb = 'location';//連携ファイル
 $relationid = 'id';//連携項目
 
 $wdays = ["日", "月", "火", "水", "木", "金", "土"];
