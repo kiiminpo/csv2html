@@ -31,7 +31,7 @@ if (!empty($change)) {
         ob_start();
     }
 }
-$data = empty($_GET["c"]) ? "" : $csv[$csvIx[$_GET["c"]]];
+$data = empty($_GET["c"]) ? "" : $csv[$csvIx[$_GET["c"]]] ?? "";
 if (empty($data)) {
     include("list.php");
 } else {
