@@ -58,7 +58,7 @@ function readCSV($callback = null) {
 	if ($fh = @fopen($dbbase . $dbfile . ".csv", "r")) {
 		//見出しの読み込み
 		$data = fgetcsv($fh);
-		foreach ($data as $value) {
+		foreach ((array)$data as $value) {
 			$value = preg_replace('/^\xef\xbb\xbf|"/', '', $value);
 			if (!empty($charset) && !preg_match("/utf\-?8/i", $charset)) {
 				$value = mb_convert_encoding($value, "utf-8", $charset);
@@ -95,11 +95,11 @@ function readCSV($callback = null) {
 				$ix[$weekdayname] = $wdays[date('w', strtotime($ix[$datename]))];
 			}
 			if (!empty($relationdb)) {
-				$ix[$relationdb] = $rdbIx[$ix[$relationid]] ?? '';
+				$ix[$relationdb] = $rdbIx[$ix[$relationid] ?? ''] ?? '';
 			}
 			++$total;
-			if ($qar[0]) {//絞り込み(q)
-				$ar = explode("/", $ix[$qar[0]] ?? "");
+			if ($qar[0]) { //絞り込み(q)
+				$ar = preg_split("/[\/,]/", $ix[$qar[0]] ?? "");
 				if (!in_array($qar[1], $ar)) {
 					if (empty($relationdb)) {
 						continue;
