@@ -99,7 +99,7 @@ function readCSV($callback = null) {
 			}
 			++$total;
 			if ($qar[0]) { //絞り込み(q)
-				$ar = preg_split("/[\/,]/", $ix[$qar[0]] ?? "");
+				$ar = preg_split("/\s*[\/,]\s*/", $ix[$qar[0]] ?? "");
 				if (!in_array($qar[1], $ar)) {
 					if (empty($relationdb)) {
 						continue;
