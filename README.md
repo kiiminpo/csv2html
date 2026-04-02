@@ -28,6 +28,10 @@
 `<?php for ($i = $pos; $i < $pos + $items && $i < count($csv); ++$i): $data = $csv[$i]; if ($data): ?>`  
 【内容】  
 `<?php endif;endfor; ?>`  
+
+## ▼ページネーション
+`<a href="./<?= getQuery(["p" => $pos - $items]); ?>">←</a>`  
+`<a href="./<?= getQuery(["p" => $pos + $items]); ?>">→</a>`  
   
 ## ▼?q=  
 `<?php if (!empty($_GET["q"])) : echo "【", htmlentities($_GET["q"]), "】"; endif; ?>`  
