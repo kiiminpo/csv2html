@@ -30,8 +30,12 @@
 `<?php endif;endfor; ?>`  
 
 ## ▼ページネーション
+`<?php if ($pos >= $items): ?>`  
 `<a href="./<?= getQuery(["p" => $pos - $items]); ?>">←</a>`  
+`<?php endif ?>`  
+`<?php if ($pos + $items < count($csv)): ?>`  
 `<a href="./<?= getQuery(["p" => $pos + $items]); ?>">→</a>`  
+`<?php endif ?>`  
   
 ## ▼?q=  
 `<?php if (!empty($_GET["q"])) : echo "【", htmlentities($_GET["q"]), "】"; endif; ?>`  
